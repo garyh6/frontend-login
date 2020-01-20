@@ -1,0 +1,15 @@
+:root {
+  --light: #eeeeee;
+  --grey: #393e46;
+  --blue: #00adb5;
+  --black: #222831;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}

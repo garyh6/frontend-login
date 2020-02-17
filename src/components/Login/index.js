@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./Login.scss";
 
 const Login = () => {
+  const history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async e => {
     e.preventDefault();
+
     try {
       const res = await fetch(`http://localhost:4000/login`, {
         method: "POST",
@@ -20,7 +23,9 @@ const Login = () => {
       });
       console.log("************ var ", res);
     } catch (err) {
-      console.log("************ err", err);
+      console.log("************ login err", err);
+      // TODO fix after connecting to backend auth
+      history.push("/admin");
     }
   };
 
